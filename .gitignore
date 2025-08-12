@@ -1,0 +1,19 @@
+# Python virtual environment
+venv/
+ENV/
+.venv/
+env/
+
+# Bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configs / secrets
+config.py
+
+# OS / IDE junk
+.DS_Store
+Thumbs.db
+.vscode/
