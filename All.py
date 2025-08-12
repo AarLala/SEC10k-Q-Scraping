@@ -15,8 +15,12 @@ logging.basicConfig(
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[logging.StreamHandler()]
 )
+#appropriate practices for production code
+from config import USER_AGENT_EMAIL
+
+
 #use emali here. preferably one connected with Firm. I don't have one, so used personal
-headers = {'User-Agent': "alala1@imsa.edu"}
+headers = {'User-Agent': "USER_AGENT_EMAIL"}
 
 # Retry strategy for requests
 retry_strategy = Retry(
@@ -126,7 +130,7 @@ def main():
     for filing in ten_k_filings:
         download_full_filing(cik, filing['accessionNumber'], filing['primaryDocument'], OUTPUT_FOLDER)
     
-    # will create file
+    # will create file, #Test
     create_summary_csv(ten_k_filings, OUTPUT_FOLDER, cik)
     
     logging.info("All done!")
